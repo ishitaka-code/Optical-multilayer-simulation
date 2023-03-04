@@ -1,0 +1,306 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12529,        298]
+NotebookOptionsPosition[     11716,        273]
+NotebookOutlinePosition[     12231,        294]
+CellTagsIndexPosition[     12188,        291]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+\:4e0b\:8a18\:53c2\:8003\:8ad6\:6587\:3092\:57fa\:306bSiO2[1]\:3068TiO2[2]\
+\:306e\:5ba4\:6e29\:306b\:304a\:3051\:308b\:5c48\:6298\:7387\:3092\:6c42\:3081\
+\:308b\:ff0e
+[1]I. H. Malitson, \[OpenCurlyDoubleQuote]Interspecimen Comparison of the \
+Refractive Index of Fused Silica*,\[Dagger],\[CloseCurlyDoubleQuote] J. Opt. \
+Soc. Am. 55, 1205-1209 (1965)
+[2]J. R. DeVore, \[OpenCurlyDoubleQuote]Refractive Indices of Rutile and \
+Sphalerite,\[CloseCurlyDoubleQuote] J. Opt. Soc. Am. 41, 416-419 (1951)\
+\>", "Text",
+ CellChangeTimes->{{3.7512782911804943`*^9, 3.751278311362629*^9}, 
+   3.751278471198645*^9, {3.7512785692519827`*^9, 3.751278609356608*^9}, {
+   3.7512786500420475`*^9, 3.7512787646482887`*^9}, {3.751278800365878*^9, 
+   3.7512788131375027`*^9}},ExpressionUUID->"11916be2-7e90-4be9-8ef2-\
+1c8a16860c66"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"nSiO2RoomT", "[", "\[Lambda]_", 
+   RowBox[{"(*", 
+    RowBox[{"20", "\[Degree]C"}], "*)"}], "]"}], ":=", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"1", "+", 
+    FractionBox[
+     RowBox[{"0.6961663", " ", 
+      RowBox[{"\[Lambda]", "^", "2"}]}], 
+     RowBox[{
+      RowBox[{"\[Lambda]", "^", "2"}], " ", "-", 
+      RowBox[{"0.0684043", "^", "2"}]}]], "+", 
+    FractionBox[
+     RowBox[{"0.4079426", " ", 
+      RowBox[{"\[Lambda]", "^", "2"}]}], 
+     RowBox[{
+      RowBox[{"\[Lambda]", "^", "2"}], " ", "-", 
+      RowBox[{"0.1162414", "^", "2"}]}]], "+", 
+    FractionBox[
+     RowBox[{"0.8974794", " ", 
+      RowBox[{"\[Lambda]", "^", "2"}]}], 
+     RowBox[{
+      RowBox[{"\[Lambda]", "^", "2"}], " ", "-", 
+      RowBox[{"9.896161", "^", "2"}]}]]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nTiO2RoomT", "[", "\[Lambda]_", 
+   RowBox[{"(*", 
+    RowBox[{"Room", " ", "temperature"}], "*)"}], "]"}], ":=", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"5.913", "+", 
+    FractionBox["0.2441", 
+     RowBox[{
+      RowBox[{"\[Lambda]", "^", "2"}], " ", "\[Minus]", "0.0803"}]]}], 
+   "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.751277815960108*^9, 3.751277854987537*^9}, {
+  3.7512778934432592`*^9, 3.751278059618948*^9}, {3.75127810923357*^9, 
+  3.7512782548764515`*^9}, {3.7512790748541837`*^9, 3.7512791067202015`*^9}, {
+  3.7512791399327774`*^9, 3.751279156699693*^9}, {3.7512792255881133`*^9, 
+  3.7512792639977646`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"6f8d1da5-a58d-4d10-bd18-7c4a49eac63f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"nSiO2TiO2RoomTPlot", "=", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{"SiO2", ",", " ", 
+           RowBox[{"nSiO2RoomT", "[", "\[Lambda]", "]"}], ",", "Nothing"}], 
+          "]"}], ",", 
+         RowBox[{"If", "[", 
+          RowBox[{"TiO2", ",", " ", 
+           RowBox[{"nTiO2RoomT", "[", "\[Lambda]", "]"}], ",", "Nothing"}], 
+          "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Lambda]", ",", "0.3", ",", "2"}], "}"}], ",", 
+       RowBox[{"PlotLabels", "\[Rule]", " ", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"If", "[", 
+           RowBox[{"SiO2", ",", " ", "\"\<SiO2\>\"", ",", "Nothing"}], "]"}], 
+          ",", 
+          RowBox[{"If", "[", 
+           RowBox[{"TiO2", ",", "\"\<TiO2\>\"", ",", "Nothing"}], "]"}]}], 
+         "}"}]}], ",", 
+       RowBox[{"PlotTheme", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Scientific\>\"", ",", "\"\<SansLabels\>\""}], "}"}]}], 
+       ",", 
+       RowBox[{"FrameLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Wavelength [um]\>\"", ",", "\"\<Refractive index\>\""}],
+          "}"}]}], ",", 
+       RowBox[{"GridLines", "\[Rule]", "Automatic"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"SiO2", ",", 
+       RowBox[{"{", 
+        RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"TiO2", ",", 
+       RowBox[{"{", 
+        RowBox[{"True", ",", "False"}], "}"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nSiO2TiO2RoomTValue", "=", 
+   RowBox[{
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"Grid", "[", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Refractive index of\>\"", ",", 
+          RowBox[{"Grid", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"\"\<SiO2:\>\"", ",", 
+               RowBox[{"nSiO2RoomT", "[", "\[Lambda]", "]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\"\<TiO2:\>\"", ",", 
+               RowBox[{"nTiO2RoomT", "[", "\[Lambda]", "]"}]}], "}"}]}], 
+            "}"}], "]"}]}], "}"}], "}"}], "]"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\[Lambda]", ",", "0.8", ",", "\"\<\:6ce2\:9577 [um]\>\""}], 
+         "}"}], ",", "0.3", ",", "2", ",", 
+        RowBox[{"Appearance", "\[Rule]", "App"}]}], "}"}]}], "]"}], "/.", 
+    RowBox[{"App", "\[Rule]", " ", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Labeled\>\"", ",", "\"\<Open\>\""}], "}"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"nSiO2TiO2RoomTPlot", ",", "nSiO2TiO2RoomTValue"}], "}"}], "}"}],
+    ",", 
+   RowBox[{"Alignment", "\[Rule]", " ", "Top"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7512797171318765`*^9, 3.751279717554633*^9}, 
+   3.751280002957071*^9, 3.75128009364077*^9, 3.7512803883325815`*^9, {
+   3.75128077369491*^9, 3.751280818443783*^9}, {3.751281636301368*^9, 
+   3.751281735419795*^9}, {3.751282513443433*^9, 3.7512825325833216`*^9}, {
+   3.7512825815059223`*^9, 3.751282584001505*^9}, {3.7512828341669474`*^9, 
+   3.751282839011551*^9}, {3.751282958664119*^9, 3.751283039838282*^9}, {
+   3.751283086264267*^9, 3.751283192065028*^9}, {3.7512832538871107`*^9, 
+   3.751283297082755*^9}, {3.751283770787159*^9, 3.7512837783355317`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"5b715659-b7d9-4acb-8496-2820f03e2c82"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[
+      StyleBox[
+       DynamicModuleBox[{$CellContext`SiO2$$ = True, $CellContext`TiO2$$ = 
+        True, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+        Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, 
+        Typeset`animvar$$ = 1, Typeset`name$$ = 
+        "\"\:540d\:79f0\:672a\:5b9a\:7fa9\"", Typeset`specs$$ = {{
+          Hold[$CellContext`SiO2$$], {True, False}}, {
+          Hold[$CellContext`TiO2$$], {True, False}}}, Typeset`size$$ = {
+        338., {92., 98.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+        Typeset`skipInitDone$$ = True, $CellContext`SiO2$4748$$ = 
+        False, $CellContext`TiO2$4749$$ = False}, 
+        DynamicBox[Manipulate`ManipulateBoxes[
+         1, StandardForm, 
+          "Variables" :> {$CellContext`SiO2$$ = True, $CellContext`TiO2$$ = 
+            True}, "ControllerVariables" :> {
+            Hold[$CellContext`SiO2$$, $CellContext`SiO2$4748$$, False], 
+            Hold[$CellContext`TiO2$$, $CellContext`TiO2$4749$$, False]}, 
+          "OtherVariables" :> {
+           Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+            Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+            Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+            Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> Plot[{
+             If[$CellContext`SiO2$$, 
+              $CellContext`nSiO2RoomT[$CellContext`\[Lambda]], Nothing], 
+             If[$CellContext`TiO2$$, 
+              $CellContext`nTiO2RoomT[$CellContext`\[Lambda]], 
+              Nothing]}, {$CellContext`\[Lambda], 0.3, 2}, PlotLabels -> {
+              If[$CellContext`SiO2$$, "SiO2", Nothing], 
+              If[$CellContext`TiO2$$, "TiO2", Nothing]}, 
+            PlotTheme -> {"Scientific", "SansLabels"}, 
+            FrameLabel -> {"Wavelength [um]", "Refractive index"}, GridLines -> 
+            Automatic], 
+          "Specifications" :> {{$CellContext`SiO2$$, {
+             True, False}}, {$CellContext`TiO2$$, {True, False}}}, 
+          "Options" :> {}, "DefaultOptions" :> {}],
+         ImageSizeCache->{389., {143., 149.}},
+         SingleEvaluation->True],
+        Deinitialization:>None,
+        DynamicModuleValues:>{},
+        SynchronousInitialization->True,
+        UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+        UnsavedVariables:>{Typeset`initDone$$},
+        UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+       Deployed->True,
+       StripOnInput->False],
+      Manipulate`InterpretManipulate[1]], 
+     TagBox[
+      StyleBox[
+       DynamicModuleBox[{$CellContext`\[Lambda]$$ = 0.8, Typeset`show$$ = 
+        True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+        Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+        "\"\:540d\:79f0\:672a\:5b9a\:7fa9\"", Typeset`specs$$ = {{{
+           Hold[$CellContext`\[Lambda]$$], 0.8, "\:6ce2\:9577 [um]"}, 0.3, 
+          2}}, Typeset`size$$ = {235., {12., 18.}}, Typeset`update$$ = 0, 
+        Typeset`initDone$$, Typeset`skipInitDone$$ = 
+        True, $CellContext`\[Lambda]$4773$$ = 0}, 
+        DynamicBox[Manipulate`ManipulateBoxes[
+         1, StandardForm, "Variables" :> {$CellContext`\[Lambda]$$ = 0.8}, 
+          "ControllerVariables" :> {
+            Hold[$CellContext`\[Lambda]$$, $CellContext`\[Lambda]$4773$$, 0]},
+           "OtherVariables" :> {
+           Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+            Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+            Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+            Typeset`initDone$$, Typeset`skipInitDone$$}, "Body" :> 
+          Grid[{{"Refractive index of", 
+              Grid[{{"SiO2:", 
+                 $CellContext`nSiO2RoomT[$CellContext`\[Lambda]$$]}, {"TiO2:", 
+                 $CellContext`nTiO2RoomT[$CellContext`\[Lambda]$$]}}]}}], 
+          "Specifications" :> {{{$CellContext`\[Lambda]$$, 0.8, 
+              "\:6ce2\:9577 [um]"}, 0.3, 2, 
+             Appearance -> {"Labeled", "Open"}}}, "Options" :> {}, 
+          "DefaultOptions" :> {}],
+         ImageSizeCache->{344., {72., 78.}},
+         SingleEvaluation->True],
+        Deinitialization:>None,
+        DynamicModuleValues:>{},
+        SynchronousInitialization->True,
+        UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+        UnsavedVariables:>{Typeset`initDone$$},
+        UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+       Deployed->True,
+       StripOnInput->False],
+      Manipulate`InterpretManipulate[1]]}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{"Rows" -> {{Top}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.7512833831251917`*^9, 3.7512834006529016`*^9}, 
+   3.7512834535760646`*^9, 3.7512840914402447`*^9, 3.7513225740087194`*^9, 
+   3.7513377057572274`*^9, 3.751353098290348*^9, {3.75150333532057*^9, 
+   3.751503352750167*^9}},
+ CellLabel->"Out[7]=",ExpressionUUID->"3ff2f553-9c9a-4a9b-bad2-ff4cd94a9545"]
+}, Open  ]]
+},
+WindowSize->{864, 813},
+WindowMargins->{{Automatic, 204}, {119, Automatic}},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.02, 841.98}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (2018\:5e743\:670812\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 829, 14, 100, "Text",ExpressionUUID->"11916be2-7e90-4be9-8ef2-1c8a16860c66"],
+Cell[1390, 36, 1573, 41, 114, "Input",ExpressionUUID->"6f8d1da5-a58d-4d10-bd18-7c4a49eac63f",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[2988, 81, 3631, 90, 200, "Input",ExpressionUUID->"5b715659-b7d9-4acb-8496-2820f03e2c82"],
+Cell[6622, 173, 5078, 97, 325, "Output",ExpressionUUID->"3ff2f553-9c9a-4a9b-bad2-ff4cd94a9545"]
+}, Open  ]]
+}
+]
+*)
+
